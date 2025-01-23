@@ -37,6 +37,10 @@ void MainWindow::timer_check() {
 
 void MainWindow::execute() {
 
+    if(ui->once_mode->isChecked()) {
+        timer->stop();
+    }
+
     if(ui->listWidget->count() <= 0) {
         qDebug("Не найдено файлов под указанной маской.");
     }
