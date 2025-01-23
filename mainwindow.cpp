@@ -118,15 +118,12 @@ void MainWindow::on_file_mask_textbox_textChanged()
 {
 
     QString mask = ui->file_mask_textbox->toPlainText();
-    qDebug() << mask;
 
     QDir dir(QFileInfo(mask).absolutePath());
-    qDebug() << dir;
 
     QStringList fileList;
     fileList.clear();
     fileList = dir.entryList({QFileInfo(mask).fileName()}, QDir::Files);
-    qDebug() << fileList;
 
     if (!fileList.empty()) {
         ui->listWidget->clear();
